@@ -2,7 +2,7 @@
 
 This is a simple NestJS project with ElasticSearch added as a database. This project has endpoints with basic CRUD opreations.
 
-### Prerequisites
+## Prerequisites
 Ensure you have the following installed:
 
 Node.js (v16 or later) - [Download](https://nodejs.org/en)
@@ -20,7 +20,7 @@ elasticsearch.bat # Windows
 ./bin/elasticsearch # Linux/Mac
 ```
 
-###  Installation & Setup
+##  Installation & Setup
 1. Clone the Repository
 ```
 git clone https://github.com/your-repo/nestjs-elasticsearch-integration.git
@@ -40,12 +40,13 @@ npm run start:dev
 ```
 The application will run on PORT 3000 if no other port is specified in `.env`
 
-### API Endpoints
+## API Endpoints
 
-** 1. Add an Elasticsearch index **
+### 1. Add an Elasticsearch index
 
-  Endpoint: POST `/books/:index/create`
-  Request Body (optional):
+  __Endpoint:__ POST `/books/:index/create`
+
+  __Request Body (optional):__
   ```
   {
     "properties": {
@@ -73,10 +74,11 @@ The application will run on PORT 3000 if no other port is specified in `.env`
   ```
   Ex: `/books/new-books/create`
 
-** 2. Add a single document **
+### 2. Add a single document
 
-  Endpoint: POST `/books/:index/add`
-  Request Body:
+  __Endpoint:__ POST `/books/:index/add`
+
+  __Request Body:__
   ```
   { 
     name: "The Blade Itself", 
@@ -86,10 +88,11 @@ The application will run on PORT 3000 if no other port is specified in `.env`
   ```
   Ex: `/books/new-books/add`
 
-** 3. Add multiple documents **
+### 3. Add multiple documents
 
-  Endpoint: POST `/books/:index/bulk-insert`
-  Request Body:
+  __Endpoint:__ POST `/books/:index/bulk-insert`
+  
+  __Request Body:__
 
   ```
   [
@@ -101,12 +104,13 @@ The application will run on PORT 3000 if no other port is specified in `.env`
     ...
   ]
   ```
-  Ex: `/books/new-books//bulk-insert`
+  __Example:__ `/books/new-books//bulk-insert`
 
-** 4. Search documents **
+### 4. Search documents
 
-  Endpoint: GET `/books/:index/search`
-  Request Body:
+  __Endpoint:__ GET `/books/:index/search`
+  
+  __Request Body:__
   ```
   {
     "term": {
@@ -125,20 +129,22 @@ The application will run on PORT 3000 if no other port is specified in `.env`
     }
   }
   ```
-  Example: `/books/new-books/search`
+  __Example:__ `/books/new-books/search`
 
-** 5. Update a document **
+### 5. Update a document
 
-  Endpoint: PUT `/books/:index/update/:id`
-  Request Body:
+  __Endpoint:__ PUT `/books/:index/update/:id`
+
+  __Request Body:__
   ```
   {
     "price": 899.99
   }
   ```
-  Example: `/books/new-books/update/1133`
+  __Example:__ `/books/new-books/update/1133`
 
-** 6. Delete an Item **
+### 6. Delete an Item
 
-  Endpoint: DELETE `/books/:index/delete/:id`
-  Example: `/books/new-books/delete/113223`
+  __Endpoint:__ DELETE `/books/:index/delete/:id`
+
+  __Example:__ `/books/new-books/delete/113223`
